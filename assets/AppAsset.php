@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -20,10 +21,15 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/style.css',
     ];
     public $js = [
+        // 'js/jquery.js',
+        'js/jqcookie.js',
+        'js/bootstrap.bundle.js',
+        'js/main.js',
     ];
+    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap5\BootstrapAsset'

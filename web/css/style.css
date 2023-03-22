@@ -1,0 +1,195 @@
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: rgb(219, 247, 137);
+}
+
+@media (min-width:1421px) {
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+
+  #mainImg {
+    width: 800px;
+    height: auto;
+  }
+}
+
+@media (max-width:1420px) {
+  #mainImg {
+    width: 800px;
+    height: auto;
+  }
+
+  .btn-lg {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+  }
+
+  .btnM {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+  }
+
+  .btn-primary,.btn-danger {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+  }
+}
+
+@media (max-width:800px) {
+  .row-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-size: 1.2em;
+  }
+
+  .row {
+    flex-wrap: nowrap;
+  }
+
+  .row-header>.col {
+    margin-bottom: 10px;
+  }
+
+  .btn-outline-success {
+    width: 100%;
+  }
+
+  .mainT {
+    font-size: 0.7em;
+  }
+
+  .btnM {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    border-radius: 0.2rem;
+  }
+
+  .btn-primary,.btn-danger  {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.75rem;
+    border-radius: 0.2rem;
+  }
+
+  .dn {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.tabl {
+  overflow: auto;
+  height: 600px;
+}
+
+.night {
+  color: white;
+  background-color: rgb(43, 25, 25);
+}
+
+.btnN {
+
+  border: 1px solid white;
+  color: white;
+}
+
+header {
+  background-color: rgb(121, 221, 249);
+  padding-bottom: 13px;
+}
+
+main {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: rgb(244, 165, 7);
+}
+
+button {
+  cursor: pointer;
+}
+
+button .upd {
+  cursor: pointer;
+}
+
+.img {
+  margin-bottom: 10px;
+}
+
+.mainT {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border: 1px solid green;
+  border-spacing: 5px;
+  background-color:#0bbcbc;
+  width: 100%;
+  text-align: center;
+}
+
+.mainT th,
+td {
+  margin: 6px;
+  border: 1px solid grey;
+}
+
+.mainT tr:nth-child(8) {
+  width: 20px;
+}
+
+.night .mainT {
+  background-color: rgb(13, 83, 53);
+}
+
+.night header {
+  background-color: rgb(7, 58, 30);
+}
+
+.dn {
+  cursor: pointer;
+}
+
+.btnlog {
+  background-color: orange;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li {
+  background-color: rgb(117, 228, 117);
+  padding-left: 6px;
+  padding-right: 6px;
+  margin: 5px;
+  font-size: 1.2em;
+}
+
+.pagination>li:hover {
+  background-color: rgb(192, 153, 25);
+}
+
+.pagination>li.night {
+  background-color: rgb(35, 10, 197);
+}
+
+.pagination>li.night:hover {
+  background-color: rgb(156, 15, 41);
+}
+
+a {
+  color: white;
+}
+
