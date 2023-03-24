@@ -24,14 +24,13 @@ use yii\widgets\ActiveForm;
 <div class="container text-center">
 
   <? $form = ActiveForm::begin(['options' => ['id' => 'add-form']]) ?>
-
+  <?= $form->field($model, 'photo')->fileInput()->label('Фото') ?>
   <?= $form->field($model, 'categoryId')->label('Категория')->dropDownList([1 => 'Первые блюда', 2 => 'Вторые блюда', 3 => 'Салаты', 4 => 'Выпечка', 5 => 'Другое']) ?>
   <?= $form->field($model, 'nameRecipe')->input('text', ['required' => 'required'])->label('Название рецепта')  ?>
   <?= $form->field($model, 'ingredient')->input('text', ['required' => 'required'])->label('Ингредиенты') ?>
-  <?= $form->field($model, 'photo')->label('фото') ?>
-  <?= $form->field($model, 'recipeDescription')->label('Рецепт')->textArea(['rows' => 4, 'required' => 'required']) ?>
+    <?= $form->field($model, 'recipeDescription')->label('Рецепт')->textArea(['rows' => 4, 'required' => 'required']) ?>
   <?= $form->field($model, 'link')->label('Ссылка на рецепт') ?>
-  <? if (!Yii::$app->user->isGuest) : ?>
+    <? if (!Yii::$app->user->isGuest) : ?>
     <?= Html::submitButton('Добавить рецепт', ['class' => 'btn btn-success btnM']) ?>
   <? endif; ?>
   <? if (Yii::$app->user->isGuest) : ?>

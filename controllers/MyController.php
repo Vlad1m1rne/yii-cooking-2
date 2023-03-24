@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\Recipe;
+use yii\web\UploadedFile;
 
 class MyController extends Controller
 {
@@ -36,9 +37,19 @@ class MyController extends Controller
    {
       $this->view->title = 'Добавить рецепт';
       $model = new Recipe();
-      if ($model->load(Yii::$app->request->post())) {
+
+      if (Yii::$app->request->isPost) {
+         $model->load($this->request->post());
+         $model->photo = UploadedFile::getInstance($model, 'photo');
+         if (isset($model->photo->name)) {
+            $filePath = 'uploads/' . $model->photo->baseName  . rand(1,999) . '.' . $model->photo->extension;
+            $model->photo->saveAs($filePath);
+            $model->photoName =  $filePath;
+         }
+
          $model->dat = date('d-m-y', time());
-         $model->save();
+         $model->save(false);
+
          Yii::$app->session->setFlash('addOk', 'Рецепт добавлен');
          return  $this->goHome();
       } else {
@@ -47,12 +58,20 @@ class MyController extends Controller
       }
    }
 
-
-
    public function actionUpdate($id)
    {
       $model = Recipe::findOne($id);
-      if ($this->request->isPost and $model->load($this->request->post()) and $model->save()) {
+      if ($this->request->isPost and $model->load($this->request->post())) {
+         $model->photo = UploadedFile::getInstance($model, 'photo');
+
+         if (isset($model->photo->name)) {
+
+            $filePath = 'uploads/' . $model->photo->baseName  . rand(1,999) . '.' . $model->photo->extension;
+            $model->photo->saveAs($filePath);
+            $model->photoName =  $filePath;
+         }
+         $model->save(false);
+
          Yii::$app->session->setFlash('updateOk', 'Рецепт изменен');
          return $this->redirect(['view', 'id' => $model->recipeId]);
       } else {

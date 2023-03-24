@@ -36,8 +36,8 @@ class Recipe extends \yii\db\ActiveRecord
         return [
             [['categoryId', 'nameRecipe', 'ingredient', 'recipeDescription', 'dat'], 'required'],
             [['categoryId'], 'integer'],
-            [['ingredient', 'recipeDescription', 'link', 'photo'], 'string'],
-            [['dat'], 'safe'],
+            [['ingredient', 'recipeDescription', 'link'], 'string'],
+            [['dat','photoName','photo'], 'safe'],
             [['nameRecipe'], 'string', 'max' => 150],
             [['categoryId'], 'exist', 'skipOnError' => true, 'targetClass' => Category::class, 'targetAttribute' => ['categoryId' => 'categoryId']],
         ];

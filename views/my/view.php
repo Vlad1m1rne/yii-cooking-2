@@ -33,24 +33,33 @@ use yii\helpers\Url;
 <? $this->beginBlock('block2') ?>
 <div class="container text-center img">
 
-
-  <? if ($model->categoryId == '1') : ?>
+<?  if($model->photoName): ?>
+<img id='mainImg' class="mainImg img-fluid" src="/<?=$model->photoName?>">  
+  
+  <? elseif ($model->categoryId == '1') : ?>
     <img id='mainImg' class="mainImg img-fluid" src="/images/first.jpg">
-  <? endif; ?>
-  <? if ($model->categoryId == '2') : ?>
+  
+  <? elseif ($model->categoryId == '2') : ?>
     <img id='mainImg' class="mainImg img-fluid" src="/images/second.jpg">
-  <? endif; ?>
-  <? if ($model->categoryId == '3') : ?>
+
+  <? elseif ($model->categoryId == '3') : ?>
     <img id='mainImg' class="mainImg img-fluid" src="/images/salat.jpg">
-  <? endif; ?>
-  <? if ($model->categoryId == '4') : ?>
+ 
+  <? elseif ($model->categoryId == '4') : ?>
     <img id='mainImg' class="mainImg img-fluid" src="/images/cake.jpg">
-  <? endif; ?>
-  <? if ($model->categoryId == '5') : ?>
+
+  <? elseif ($model->categoryId == '5') : ?>
     <img id='mainImg' class="mainImg img-fluid" src="/images/other.jpg">
   <? endif; ?>
+
+ 
 </div>
 <? $this->endBlock() ?>
+
+
+
+
+
 
 <div class="container text-center mt-4">
   <table class="mainT">
