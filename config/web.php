@@ -48,6 +48,9 @@ $config = [
             // send all mails to a file by default.
             'useFileTransport' => true,
         ],
+        'session'=>[
+            'name'=>'sess',
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

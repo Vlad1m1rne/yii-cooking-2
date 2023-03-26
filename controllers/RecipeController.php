@@ -1,6 +1,7 @@
 <?
 namespace app\controllers;
 
+use yii\filters\AccessControl;
 use yii\rest\ActiveController;
 use yii\web\Response;
 
@@ -28,6 +29,13 @@ public function actions(){
 public function behaviors()
 {
     return [
+      'access' => [
+        'class'=>AccessControl::class,
+        'rules'=>[
+          ['allow' => true,
+          'roles' => ['@'],]
+        ],
+      ],
         [
             'class' => 'yii\filters\ContentNegotiator',
             // 'only' => ['view', 'index'],  // in a controller
