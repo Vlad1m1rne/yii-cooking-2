@@ -18,10 +18,10 @@ $config = [
             'layout' =>'admin',
             'defaultRoute' => 'recipe/index',
         ],
-         'api' => [
-            'class' => 'app\modules\api\Module',
-            // 'defaultRoute' => 'recipe/index',
-        ],
+        //  'api' => [
+        //     'class' => 'app\modules\api\Module',
+        //     // 'defaultRoute' => 'recipe/index',
+        // ],
     ],
     'components' => [
         'request' => [
@@ -68,7 +68,8 @@ $config = [
                 ['class' => 'yii\rest\UrlRule',
                  'controller' => ['recipe','category'],
                  'pluralize'=>false,
-                 'except' => ['delete', 'create', 'update'],],
+                //  'except' => ['delete', 'create', 'update'],
+                ],
                  
             ],
         ],
