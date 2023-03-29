@@ -11,7 +11,7 @@ class RecipeController extends ActiveController
 
 public $modelClass = 'app\rest\models\Recipe';
 
-public $serializer = [
+public $serializer = [ 
   'class' => 'yii\rest\Serializer',
   'collectionEnvelope' => 'items',
 ];
