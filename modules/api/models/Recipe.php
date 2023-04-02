@@ -11,7 +11,7 @@ class Recipe extends ModelsRecipe implements Linkable
 
   public function fields(){
    $fields = parent::fields();
-   unset($fields['link']);
+   unset($fields['link'],$fields['photo'],$fields['photoName']);
    return $fields;
    }
 public function getLinks(){

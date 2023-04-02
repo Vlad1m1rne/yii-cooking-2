@@ -19,10 +19,10 @@ class Recipe extends ActiveRecord
   public function rules()
   {
     return [
-      [['categoryId', 'nameRecipe', 'ingredient', 'recipeDescription', 'dat'], 'required'],
+      [['categoryId', 'nameRecipe', 'ingredient', 'recipeDescription'], 'required'],
       [['categoryId'], 'integer'],
-      [['ingredient', 'recipeDescription', 'link'], 'string'],
-      [['dat','photoName'], 'safe'],
+      [['ingredient', 'recipeDescription'], 'string'],
+      [['dat','photoName', 'link'], 'safe'],
       [['photo'], 'file', 'extensions' => 'png, jpg, jpeg'],
       [['nameRecipe'], 'string', 'max' => 150],
       [['categoryId'], 'exist', 'skipOnError' => true, 'targetClass' => Category::class, 'targetAttribute' => ['categoryId' => 'categoryId']],

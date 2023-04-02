@@ -4,12 +4,13 @@ namespace app\modules\api\controllers;
 
 
 use yii\rest\ActiveController;
+use Yii;
 
 
 class RecipeController extends ActiveController
 {
 
-public $modelClass = 'app\rest\models\Recipe';
+public $modelClass = 'app\modules\api\models\Recipe';
 
 public $serializer = [ 
   'class' => 'yii\rest\Serializer',
@@ -17,13 +18,18 @@ public $serializer = [
 ];
 
 public function checkAccess($action, $model = null, $params = []){
-  return true;
+  if($action==='delete'){
+    if(Yii::$app->user->identity['username'] !=='admin'){
+      throw new \yii\web\ForbiddenHttpException(sprintf('Вы не можете пользоваться этим методом!', $action));
+    }
+  }
+  // return true;
 }
 
-public function actions(){
-  $actions = parent::actions();
-  unset($actions['delete']);
-  return $actions;
-}
+// public function actions(){
+//   $actions = parent::actions();
+//   // unset($actions['delete']);
+//   return $actions;
+// }
 
 }
