@@ -22,10 +22,7 @@ $config = [
             'class' => 'app\modules\api\Module',
             // 'defaultRoute' => 'recipe/index',
         ],
-        //  'api' => [
-        //     'class' => 'app\modules\api\Module',
-        //     // 'defaultRoute' => 'recipe/index',
-        // ],
+       
     ],
     'components' => [
         'request' => [
@@ -73,15 +70,14 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule',
-                 'controller' => ['api/recipe','category'],
+                 'controller' => ['api/recipe'],
                  'pluralize'=>false,
                 //  'except' => ['delete', 'create', 'update'],
                 ],
                  
             ],
         ],
-      
-       
+             
     ],
     'params' => $params,
     'defaultRoute' => 'my/index',

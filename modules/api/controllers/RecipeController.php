@@ -26,6 +26,13 @@ public function checkAccess($action, $model = null, $params = []){
   // return true;
 }
 
+protected function verbs(){
+  
+    $verbs = parent::verbs();
+    $verbs['index'][] = 'POST'; 
+    return $verbs;
+  
+}
 // public function actions(){
 //   $actions = parent::actions();
 //   // unset($actions['delete']);
