@@ -5,7 +5,8 @@ namespace app\modules\api\controllers;
 
 use yii\rest\ActiveController;
 use Yii;
-
+use yii\data\ActiveDataProvider;
+use app\modules\api\models\Recipe;
 
 class RecipeController extends ActiveController
 {
@@ -37,6 +38,13 @@ protected function verbs(){
 //   $actions = parent::actions();
 //   // unset($actions['delete']);
 //   return $actions;
+// }
+
+// public function actionIndex()
+// {
+//     return new ActiveDataProvider([
+//         'query' => Recipe::find(),
+//     ]);
 // }
 
 }

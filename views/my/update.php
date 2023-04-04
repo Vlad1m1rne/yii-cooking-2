@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'recipeId')->label('ID')->input('text', ['class' => 'inpUpd', 'readonly' => '']) ?>
 <? if($model->photoName):?>
     <?= $form->field($model, 'photo')->fileInput()->label('Заменить фото') ?>
-    <? else: ?>
+        <? else: ?>
       <?= $form->field($model, 'photo')->fileInput()->label('Добавить фото') ?>
       <? endif; ?>
 

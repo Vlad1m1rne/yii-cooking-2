@@ -47,7 +47,7 @@ class MyController extends Controller
             $model->photoName =  $filePath;
          }
 
-         $model->dat = date('d-m-y', time());
+         $model->dat = date('Y-m-d', time());
          $model->save(false);
 
          Yii::$app->session->setFlash('addOk', 'Рецепт добавлен');

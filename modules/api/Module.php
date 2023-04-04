@@ -30,7 +30,6 @@ class Module extends \yii\base\Module
 
     public function behaviors()
     {
-
         $behaviors = parent::behaviors();
 
         $behaviors['contentNegotiator']['formats']['text/html'] = Response::FORMAT_HTML;
@@ -60,13 +59,12 @@ class Module extends \yii\base\Module
             ],
         ];
 
-
         $behaviors['contentNegotiator'] = [
             'class' => ContentNegotiator::class,
-            'formatParam' => 'format',
+            'formatParam' => '_format',
                  'formats' => [
                 'xml' => Response::FORMAT_XML,
-                'application/json' => Response::FORMAT_JSON,
+                'json' => Response::FORMAT_JSON,
             ],
         ];
 
