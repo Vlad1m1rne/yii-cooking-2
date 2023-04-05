@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
   <?= $form->field($model, 'photo')->fileInput()->label('Фото') ?>
   <?= $form->field($model, 'categoryId')->label('Категория')->dropDownList([1 => 'Первые блюда', 2 => 'Вторые блюда', 3 => 'Салаты', 4 => 'Выпечка', 5 => 'Другое']) ?>
   <?= $form->field($model, 'nameRecipe')->input('text', ['required' => 'required'])->label('Название рецепта')  ?>
-  <?= $form->field($model, 'ingredient')->input('text', ['required' => 'required'])->label('Ингредиенты') ?>
+  <?= $form->field($model, 'ingredient')->label('Ингредиенты')->textArea(['rows' => 3, 'required' => 'required']) ?>
     <?= $form->field($model, 'recipeDescription')->label('Рецепт')->textArea(['rows' => 4, 'required' => 'required']) ?>
   <?= $form->field($model, 'link')->label('Ссылка на рецепт') ?>
     <? if (!Yii::$app->user->isGuest) : ?>
